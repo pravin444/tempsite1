@@ -124,20 +124,19 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Flicker Effect */
-@keyframes flicker {
+/* === FLICKER EFFECT STYLES === */
+@keyframes flickerAnimation {
     0%   { opacity: 1; }
-    10%  { opacity: 0.1; }
-    20%  { opacity: 1; }
-    30%  { opacity: 0.1; }
-    40%  { opacity: 1; }
-    50%  { opacity: 0.1; }
+    25%  { opacity: 0.5; }
+    50%  { opacity: 1; }
+    75%  { opacity: 0.5; }
     100% { opacity: 1; }
 }
 
 .flicker-effect {
-    animation: flicker 0.5s forwards;
+    animation: flickerAnimation 1s 1; /* Adjust 3s to however long you want the flicker effect to last */
 }
+
 
 
 /* === END OF SWITCH STYLES === */

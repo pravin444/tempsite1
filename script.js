@@ -12,11 +12,12 @@ function resetSwitches() {
 /**
  * Applies a flickering effect to the entire page.
  */
-function flickerEffect() {
+function flickerEffect(callback) {
     document.body.classList.add('flicker-effect');
     setTimeout(() => {
         document.body.classList.remove('flicker-effect');
-    }, 500); // Remove after the same duration as the animation
+        if (callback) callback();
+    }, 0.7 * 1000); // Flicker duration of 1 second
 }
 
 /* === EVENT LISTENERS === */
@@ -26,8 +27,11 @@ function flickerEffect() {
  */
 document.getElementById('profile-switch').addEventListener('change', function() {
     if (this.checked) {
-        flickerEffect();
-        window.location.href = "profile.html"; // Assuming the profile page is named 'profile.html'
+        flickerEffect(() => {
+            setTimeout(() => {
+                window.location.href = "profile.html";
+            }, 0.7 * 1000); // Delay redirection just a bit more than the flicker duration if needed
+        });
     }
 });
 
@@ -36,8 +40,11 @@ document.getElementById('profile-switch').addEventListener('change', function() 
  */
 document.getElementById('project-list-switch').addEventListener('change', function() {
     if (this.checked) {
-        flickerEffect();
-        window.location.href = "project-list.html"; // Assuming the project list page is named 'project-list.html'
+        flickerEffect(() => {
+            setTimeout(() => {
+                window.location.href = "project-list.html";
+            }, 0.7 * 1000); // Delay redirection just a bit more than the flicker duration
+        });
     }
 });
 
@@ -48,4 +55,3 @@ document.getElementById('project-list-switch').addEventListener('change', functi
 window.addEventListener('pageshow', function(event) {
     resetSwitches();
 });
-
