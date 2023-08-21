@@ -2,22 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>Homepage</h2>
+    
+    <div class="section" id="profile-section">
+        <h3>Profile</h3>
+        <label class="switch">
+            <input type="checkbox" id="profile-switch">
+            <span class="slider"></span>
+        </label>
+    </div>
 
-<!-- Add this section for the project list -->
-<section class="project-list">
-    <h2>Project List</h2>
-    <ul>
-        <li>Web Scraping</li>
-        <li>Data Processing</li>
-        <li>Data Analysis</li>
-        <li>Data Visualization</li>
-    </ul>
-</section>
+    <div class="section" id="project-list-section">
+        <h3>Project List</h3>
+        <label class="switch">
+            <input type="checkbox" id="project-list-switch">
+            <span class="slider"></span>
+        </label>
+    </div>
 
+    <div class="section" id="theme-section">
+        <h3>Theme</h3>
+        <label class="switch">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
