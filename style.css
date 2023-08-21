@@ -1,3 +1,5 @@
+/* === GLOBAL STYLES === */
+
 body {
     margin: 0;
     padding: 0;
@@ -13,6 +15,8 @@ h2 {
     border-bottom: 3px solid #0F0;
     font-size: 24px;
 }
+
+/* === PROJECT LIST PAGE STYLES === */
 
 .project-list ul {
     list-style-type: none;
@@ -39,7 +43,8 @@ h2 {
     background-color: rgba(0, 255, 0, 0.2); /* Brighter green on hover */
 }
 
-/* Optional: Add a "scanline" effect */
+/* === SCANLINE EFFECT === */
+
 @keyframes scanline {
     0% { top: -50%; }
     100% { top: 150%; }
@@ -57,13 +62,23 @@ body::after {
     animation: scanline 4s infinite linear;
 }
 
+/* === HOMEPAGE SPECIFIC STYLES === */
 
-.section {
-    margin: 20px;
-    padding: 10px;
+
+
+.homepage .section {
+    margin: 70px auto;  /* Centers the section horizontally */
+    padding: 15px;
     border: 1px solid #0F0;
     background-color: #000e06;
+    display: flex; /* Added to align the title and switch horizontally */
+    align-items: center; /* Vertically center the title and switch */
+    justify-content: space-between; /* Space out the title and switch */
+    width: 350px; /* Fixed width for the subsections */
+    text-align: center; /* Ensures content inside the section is centered */
 }
+
+/* === SWITCH STYLES FOR HOMEPAGE === */
 
 .switch {
     position: relative;
@@ -85,7 +100,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #46703d; /* Dim color for "off" state */
     transition: .4s;
 }
 
@@ -96,14 +111,38 @@ body::after {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #0F0;
+    background-color: rgba(165, 18, 18, 0.952); /* Dim green for "off" state */
     transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #0F0;
+    background-color: rgba(30, 160, 12, 0.637); /* Bright green for "on" state */
 }
 
 input:checked + .slider:before {
+    background-color: #89f589; /* Bright white for the circle in "on" state */
     transform: translateX(26px);
 }
+
+/* Flicker Effect */
+@keyframes flicker {
+    0%   { opacity: 1; }
+    10%  { opacity: 0.1; }
+    20%  { opacity: 1; }
+    30%  { opacity: 0.1; }
+    40%  { opacity: 1; }
+    50%  { opacity: 0.1; }
+    100% { opacity: 1; }
+}
+
+.flicker-effect {
+    animation: flicker 0.5s forwards;
+}
+
+
+/* === END OF SWITCH STYLES === */
+
+
+
+
+
