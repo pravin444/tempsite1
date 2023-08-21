@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Dark background, like old monitors */
+    font-family: 'Courier New', Courier, monospace; /* Classic monospace font */
+    color: #0F0; /* Bright green, like old terminal text */
+}
+
+h2 {
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+    border-bottom: 3px solid #0F0;
+    font-size: 24px;
+}
+
+.project-list ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.project-list li {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    border-right: 2px solid #333; /* Slightly less bright border for a subtle divider */
+    background-color: rgba(0, 255, 0, 0.1); /* Slight green background */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.project-list li:last-child {
+    border-right: none;
+}
+
+.project-list li:hover {
+    background-color: rgba(0, 255, 0, 0.2); /* Brighter green on hover */
+}
+
+/* Optional: Add a "scanline" effect */
+@keyframes scanline {
+    0% { top: -50%; }
+    100% { top: 150%; }
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; /* Allow clicks through the scanlines */
+    animation: scanline 5s infinite linear;
+}
