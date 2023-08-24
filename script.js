@@ -110,3 +110,28 @@ function draw()
 
 setInterval(draw, 35);
 /* === END OF MATRIX RAIN ANIMATION === */
+
+
+/* === FLOW OF MATRIX RAIN ANIMATION === */
+
+// Delay the appearance of system booting message and the rest of the elements:
+
+setTimeout(function() {
+    // Show system booting message after 5 seconds (or adjust the duration as needed)
+    document.querySelector(".boot").style.visibility = "visible";
+
+    setTimeout(function() {
+        // Hide system booting message
+        document.querySelector(".boot").style.visibility = "hidden";
+
+        // Show the rest of the elements after another 5 seconds
+        document.querySelector("h2").style.visibility = "visible";
+        var sections = document.querySelectorAll(".section");
+        sections.forEach(function(section) {
+            section.style.visibility = "visible";
+        });
+    }, 5000); // Adjust this value if you want to show the content faster or slower after the booting message
+
+}, 3000);  // This waits for 5 seconds before displaying the booting message, adjust as needed
+
+/* ===FLOW OF MATRIX RAIN ANIMATION ENDS === */

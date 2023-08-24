@@ -1,5 +1,14 @@
 /* === GLOBAL STYLES === */
 
+/* === GLOBAL STYLES FOR INDEX PAGE ONLY === */
+
+/* Initially hides main content and boot message on homepage only */
+.homepage .section, .homepage h2, .homepage .boot {
+    visibility: hidden;
+}
+
+
+
 body {
     margin: 0;
     padding: 0;
