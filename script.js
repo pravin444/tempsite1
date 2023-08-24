@@ -65,7 +65,11 @@ window.addEventListener('pageshow', function(event) {
 
 
 /* === MATRIX RAIN ANIMATION === */
-var c = document.getElementById("c") || document.getElementById("project-list-canvas");
+// Retrieve the canvas element from the current page, 
+// checking for potential canvas IDs in the order: index, project-list, profile.
+var c = document.getElementById("c") 
+        || document.getElementById("project-list-canvas")
+        || document.getElementById("profile-canvas");
 var ctx = c.getContext("2d");
 
 //making the canvas full screen
