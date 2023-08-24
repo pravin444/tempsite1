@@ -123,21 +123,28 @@ setInterval(draw, 35);
 // Delay the appearance of system booting message and the rest of the elements:
 
 setTimeout(function() {
-    // Show system booting message after 5 seconds (or adjust the duration as needed)
-    document.querySelector(".boot").style.visibility = "visible";
+    // Check if the ".boot" element exists
+    var bootElement = document.querySelector(".boot");
+    if (bootElement) {
+        // Show system booting message after 5 seconds (or adjust the duration as needed)
+        bootElement.style.visibility = "visible";
 
-    setTimeout(function() {
-        // Hide system booting message
-        document.querySelector(".boot").style.visibility = "hidden";
+        setTimeout(function() {
+            // Hide system booting message
+            bootElement.style.visibility = "hidden";
 
-        // Show the rest of the elements after another 5 seconds
-        document.querySelector("h2").style.visibility = "visible";
-        var sections = document.querySelectorAll(".section");
-        sections.forEach(function(section) {
-            section.style.visibility = "visible";
-        });
-    }, 2500); // Adjust this value if you want to show the content faster or slower after the booting message
+            // Show the rest of the elements after another 5 seconds
+            var h2Element = document.querySelector("h2");
+            if (h2Element) {
+                h2Element.style.visibility = "visible";
+            }
+            
+            var sections = document.querySelectorAll(".section");
+            sections.forEach(function(section) {
+                section.style.visibility = "visible";
+            });
+        }, 2500); // Adjust this value if you want to show the content faster or slower after the booting message
+    }
 
 }, 3000);  // This waits for 3 seconds before displaying the booting message, adjust as needed
 
-/* ===FLOW OF MATRIX RAIN ANIMATION ENDS === */
