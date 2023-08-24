@@ -142,6 +142,40 @@ input:checked + .slider:before {
 /* === END OF SWITCH STYLES === */
 
 
+/* === SYSTEM BOOTING STYLES === */
+
+* {
+    font-family: 'Changa', sans-serif;
+    font-size: 22px;
+}
+
+.boot {
+    color: rgb(22, 201, 31);
+    position: absolute;
+    bottom: 10px; /* Positioning from the bottom of the page */
+    left: 10px;   /* Positioning from the left of the page */
+}
+
+.boot span {
+    width: 1.5rem;
+    position: fixed;
+    height: 1rem;
+    margin-left: 1rem;
+    border-bottom: 0.5rem solid rgb(76, 199, 113);
+    animation: cursor 0.4s infinite;
+}
+
+@keyframes cursor {
+    from {
+        border-color: rgb(4, 87, 8);
+    }
+    to {
+        border-color: transparent;
+    }
+}
+
+/* === END OF SYSTEM BOOTING STYLES === */
+
 
 
 
