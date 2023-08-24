@@ -16,6 +16,18 @@ h2 {
     font-size: 24px;
 }
 
+/* === MATRIX BACKGROUND STYLES === */
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures the canvas is below other content */
+}
+
+
 /* === PROJECT LIST PAGE STYLES === */
 
 .project-list ul {
@@ -136,7 +148,6 @@ input:checked + .slider:before {
 .flicker-effect {
     animation: flickerAnimation 1s 1; /* Adjust 3s to however long you want the flicker effect to last */
 }
-
 
 
 /* === END OF SWITCH STYLES === */
