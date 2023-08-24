@@ -4,9 +4,12 @@
  * Resets all the switches to the "Off" position.
  */
 function resetSwitches() {
-    document.getElementById('profile-switch').checked = false;
-    document.getElementById('project-list-switch').checked = false;
-    document.getElementById('theme-switch').checked = false;
+    if (document.getElementById('profile-switch'))
+        document.getElementById('profile-switch').checked = false;
+    if (document.getElementById('project-list-switch'))
+        document.getElementById('project-list-switch').checked = false;
+    if (document.getElementById('theme-switch'))
+        document.getElementById('theme-switch').checked = false;
 }
 
 /**
@@ -25,28 +28,32 @@ function flickerEffect(callback) {
 /**
  * Redirects to the profile page when the profile switch is turned on.
  */
-document.getElementById('profile-switch').addEventListener('change', function() {
-    if (this.checked) {
-        flickerEffect(() => {
-            setTimeout(() => {
-                window.location.href = "profile.html";
-            }, 0.7 * 1000); // Delay redirection just a bit more than the flicker duration if needed
-        });
-    }
-});
+if (document.getElementById('profile-switch')) {
+    document.getElementById('profile-switch').addEventListener('change', function() {
+        if (this.checked) {
+            flickerEffect(() => {
+                setTimeout(() => {
+                    window.location.href = "profile.html";
+                }, 0.7 * 1000); // Delay redirection just a bit more than the flicker duration if needed
+            });
+        }
+    });
+}
 
 /**
  * Redirects to the project list page when the project list switch is turned on.
  */
-document.getElementById('project-list-switch').addEventListener('change', function() {
-    if (this.checked) {
-        flickerEffect(() => {
-            setTimeout(() => {
-                window.location.href = "project-list.html";
-            }, 0.7 * 1000); // Delay redirection just a bit more than the flicker duration
-        });
-    }
-});
+if (document.getElementById('project-list-switch')) {
+    document.getElementById('project-list-switch').addEventListener('change', function() {
+        if (this.checked) {
+            flickerEffect(() => {
+                setTimeout(() => {
+                    window.location.href = "project-list.html";
+                }, 0.7 * 1000); // Delay redirection just a bit more than the flicker duration
+            });
+        }
+    });
+}
 
 /**
  * Resets switches every time the page is shown.
@@ -58,8 +65,7 @@ window.addEventListener('pageshow', function(event) {
 
 
 /* === MATRIX RAIN ANIMATION === */
-
-var c = document.getElementById("c");
+var c = document.getElementById("c") || document.getElementById("project-list-canvas");
 var ctx = c.getContext("2d");
 
 //making the canvas full screen
@@ -112,7 +118,7 @@ setInterval(draw, 35);
 /* === END OF MATRIX RAIN ANIMATION === */
 
 
-/* === FLOW OF MATRIX RAIN ANIMATION === */
+/* === FLOW OF MATRIX RAIN ANIMATION IN HOMEPAGE === */
 
 // Delay the appearance of system booting message and the rest of the elements:
 
@@ -130,8 +136,8 @@ setTimeout(function() {
         sections.forEach(function(section) {
             section.style.visibility = "visible";
         });
-    }, 5000); // Adjust this value if you want to show the content faster or slower after the booting message
+    }, 2500); // Adjust this value if you want to show the content faster or slower after the booting message
 
-}, 3000);  // This waits for 5 seconds before displaying the booting message, adjust as needed
+}, 3000);  // This waits for 3 seconds before displaying the booting message, adjust as needed
 
 /* ===FLOW OF MATRIX RAIN ANIMATION ENDS === */
